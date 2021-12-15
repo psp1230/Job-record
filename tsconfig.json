@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/config/*": ["./src/config/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/common/*": ["./src/common/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/routes/*": ["./src/routes/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/store/*": ["./src/store/*"]
+    },
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+  },
+  "include": ["./src"]
+}
