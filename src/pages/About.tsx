@@ -7,7 +7,7 @@ function App(): JSX.Element {
 
   return (
     <div className="w-full">
-      這裡是基本資料
+      這裡是工作相關
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p className="text-red-300 text-[60px]">Hello Vite + React!</p>
