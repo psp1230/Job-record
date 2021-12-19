@@ -9,6 +9,8 @@
   "dependencies": {
     "@loadable/component": "^5.15.2",
     "classnames": "^2.3.1",
+    "echarts": "^5.2.2",
+    "echarts-for-react": "^3.0.2",
     "mobx-persist": "^0.4.1",
     "mobx-react": "^7.2.1",
     "ramda": "^0.27.1",
