@@ -27,10 +27,13 @@ function GenderRate(): JSX.Element {
           { value: 1048, name: '男生', itemStyle: { color: '#448AFF' } },
           { value: 735, name: '女生', itemStyle: { color: '#FF5252' } },
         ],
-        markLine: {
-          symbol: 'none'
+        labelLine: {
+          show: false
         },
         emphasis: {
+          labelLine: {
+            show: false
+          },
           itemStyle: {
             shadowBlur: 10,
             shadowOffsetX: 0,
