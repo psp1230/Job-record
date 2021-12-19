@@ -1,5 +1,5 @@
 import ReactECharts from 'echarts-for-react';
-import { PieSeriesOption } from 'echarts';
+import { PieSeriesOption, LegendComponentOption } from 'echarts';
 const series: PieSeriesOption[] = [{
   type: 'pie',
   radius: '70%',
@@ -22,8 +22,20 @@ const series: PieSeriesOption[] = [{
   },
   label: {
     position: 'inner',
+    color: '#fff',
+    formatter: '約{d}%'
   }
 }];
+
+const lengend: LegendComponentOption = {
+  orient: 'horizontal',
+  bottom: 0,
+  right: 0,
+  lineStyle: {
+    width: 0
+  },
+  icon: 'circle'
+}
 
 function GenderRate(): JSX.Element {
   const option = {
@@ -35,15 +47,7 @@ function GenderRate(): JSX.Element {
       show: false,
       trigger: 'item'
     },
-    legend: {
-      orient: 'horizontal',
-      bottom: 0,
-      right: 0,
-      lineStyle: {
-        width: 0
-      },
-      icon: 'circle'
-    },
+    legend: lengend,
     series: series,
   };
 
