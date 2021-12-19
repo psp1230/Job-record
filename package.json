@@ -23,6 +23,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@types/echarts": "^4.9.12",
     "@types/node": "^16.11.13",
     "@types/ramda": "^0.27.60",
     "@types/react": "^17.0.33",
