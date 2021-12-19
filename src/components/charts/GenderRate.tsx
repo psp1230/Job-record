@@ -1,4 +1,29 @@
 import ReactECharts from 'echarts-for-react';
+import { PieSeriesOption } from 'echarts';
+const series: PieSeriesOption[] = [{
+  type: 'pie',
+  radius: '70%',
+  data: [
+    { value: 1048, name: '男生', itemStyle: { color: '#448AFF' } },
+    { value: 735, name: '女生', itemStyle: { color: '#FF5252' } },
+  ],
+  labelLine: {
+    show: false
+  },
+  emphasis: {
+    labelLine: {
+      show: false
+    },
+    itemStyle: {
+      shadowBlur: 10,
+      shadowOffsetX: 0,
+      shadowColor: 'rgba(0, 0, 0, 0.5)'
+    }
+  },
+  label: {
+    position: 'inner',
+  }
+}];
 
 function GenderRate(): JSX.Element {
   const option = {
@@ -19,29 +44,7 @@ function GenderRate(): JSX.Element {
       },
       icon: 'circle'
     },
-    series: [
-      {
-        type: 'pie',
-        radius: '70%',
-        data: [
-          { value: 1048, name: '男生', itemStyle: { color: '#448AFF' } },
-          { value: 735, name: '女生', itemStyle: { color: '#FF5252' } },
-        ],
-        labelLine: {
-          show: false
-        },
-        emphasis: {
-          labelLine: {
-            show: false
-          },
-          itemStyle: {
-            shadowBlur: 10,
-            shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        }
-      }
-    ]
+    series: series,
   };
 
   return (
