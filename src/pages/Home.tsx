@@ -1,4 +1,4 @@
-import GenderRate from '@/components/GenderRate';
+import GenderRate from '@/components/charts/GenderRate';
 
 function Home(): JSX.Element {
   // const [count, setCount] = useState(0)
