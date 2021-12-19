@@ -8,6 +8,10 @@ export default function route(): JSX.Element {
   const list = [
     {
       name: '基本資料',
+      route: '/:job/',
+    },
+    {
+      name: '基本資料',
       route: '/'
     }, {
       name: '第一份工作',
@@ -24,8 +28,8 @@ export default function route(): JSX.Element {
 
     <HashRouter>
       <div className='flex'>
-        <nav className="md:w-[17%] h-screen bg-green-50 shadow-xl shadow-emerald-200">
-          <div className="h-[141px] text-green-900 text-xl font-bold text-center py-[48px]">Dashboard</div>
+        <nav className="w-64 h-screen bg-green-50 shadow-xl shadow-emerald-200">
+          <div className="h-36 text-green-900 text-xl font-bold text-center py-[48px]">Dashboard</div>
           {list.map((item) => {
             return (
               <Link to={item.route} key={item.name}>
@@ -36,9 +40,16 @@ export default function route(): JSX.Element {
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/first-job" element={<Fistjob />} />
-          <Route path="/about-job" element={<About />} />
-          <Route path="/now-job" element={<Nowjob />} />
+          <Route path="engineer">
+            <Route path="first-job" element={<Fistjob />} />
+            <Route path="about-job" element={<About />} />
+            <Route path="now-job" element={<Nowjob />} />
+          </Route>
+          <Route path="designer">
+            <Route path="first-job" element={<Fistjob />} />
+            <Route path="about-job" element={<About />} />
+            <Route path="now-job" element={<Nowjob />} />
+          </Route>
         </Routes>
       </div>
     </HashRouter>

@@ -6,7 +6,7 @@ function App(): JSX.Element {
   // const [count, setCount] = useState(0)
 
   return (
-    <div className="w-full">
+    <div className="flex-grow">
       這裡是工作相關
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
