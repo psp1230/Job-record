@@ -1,33 +1,65 @@
-import { useParams, Outlet, Navigate } from 'react-router-dom';
-import FirstJob from '@/pages/FirstJob';
-import About from '@/pages/About';
-import NowJob from '@/pages/NowJob'
+import { useParams, Outlet, Navigate, Link, useLocation } from 'react-router-dom';
+import JobTabs from './JobTabs';
+import * as R from 'ramda';
 
-function JobPage(props: any): JSX.Element {
+type RouterObject = {
+  name: string,
+  route: (newJob: string) => string,
+};
+
+
+const list: RouterObject[] = [
+  {
+    name: '基本資料',
+    route(jobTitle) {
+      return `/${jobTitle}`
+    }
+  }, {
+    name: '第一份工作',
+    route(jobTitle) {
+      return `first-job`;
+    }
+  }, {
+    name: '工作相關',
+    route(jobTitle) {
+      return `about-job`;
+    }
+  }, {
+    name: '目前公司',
+    route(jobTitle) {
+      return `now-job`;
+    }
+  }
+]
+
+function JobPage(): JSX.Element {
   const { jobTitle } = useParams();
+
   if (jobTitle !== 'engineer' && jobTitle !== 'designer') {
     return <Navigate to="/engineer/first-job" />;
   }
 
-  const selected = 'bg-blue-900 text-white';
-
   return (
-    <div className="flex-grow p-12">
-      <div className="flex">
-        <p className="text-4xl font-bold text-blue-900 mr-10">
-          2021 年前端/UI 從業人員現況調查
-        </p>
-        <div className="text-blue-900 border-blue-900 border rounded flex h-10">
-          <button className={`text-lg font-noto-sans font-medium w-32 hover:bg-blue-900 hover:text-white ${jobTitle === 'engineer' && selected}`}>
-            前端工程師
-          </button>
-          <button className={`text-lg font-noto-sans font-medium w-32 hover:bg-blue-900 hover:text-white ${jobTitle === 'designer' && selected}`}>
-            <span className="font-roboto">UI</span>
-            設計師
-          </button>
+    <div className="flex">
+      <nav className="w-64 h-screen bg-green-50 shadow-xl shadow-emerald-200">
+        <div className="h-36 text-green-900 text-xl font-bold text-center py-10">Dashboard</div>
+        {list.map((item) => {
+          return (
+            <Link to={item.route(jobTitle)} key={item.name}>
+              <div className="px-[48px] py-[8px] text-green-900 text-[18px] hover:bg-green-900 hover:text-white" >{item.name}</div>
+            </Link>
+          )
+        })}
+      </nav>
+      <div className="flex-grow p-12">
+        <div className="flex">
+          <p className="text-4xl font-bold text-blue-900 mr-10">
+            2021 年前端/UI 從業人員現況調查
+          </p>
+          <JobTabs jobTitle={jobTitle} />
         </div>
+        <Outlet />
       </div>
-      <Outlet />
     </div>
   )
 }
