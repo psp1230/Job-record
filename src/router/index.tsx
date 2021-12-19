@@ -1,15 +1,13 @@
+import JobPage from '@/pages/Jobs';
 import Home from '@/pages/Home';
-import Fistjob from '@/pages/Firstjob';
+import FirstJob from '@/pages/FirstJob';
 import About from '@/pages/About';
-import Nowjob from '@/pages/Nowjob'
-import { HashRouter, Route, Routes, Link } from 'react-router-dom';
+import NowJob from '@/pages/NowJob'
+import { BrowserRouter, Route, Routes, Link, useParams } from 'react-router-dom';
 
 export default function route(): JSX.Element {
+  let { invoiceId } = useParams();
   const list = [
-    {
-      name: '基本資料',
-      route: '/:job/',
-    },
     {
       name: '基本資料',
       route: '/'
@@ -25,11 +23,10 @@ export default function route(): JSX.Element {
     }
   ]
   return (
-
-    <HashRouter>
+    <BrowserRouter>
       <div className='flex'>
         <nav className="w-64 h-screen bg-green-50 shadow-xl shadow-emerald-200">
-          <div className="h-36 text-green-900 text-xl font-bold text-center py-[48px]">Dashboard</div>
+          <div className="h-36 text-green-900 text-xl font-bold text-center py-10">Dashboard</div>
           {list.map((item) => {
             return (
               <Link to={item.route} key={item.name}>
@@ -39,19 +36,18 @@ export default function route(): JSX.Element {
           })}
         </nav>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="engineer">
-            <Route path="first-job" element={<Fistjob />} />
+          <Route path="/:jobTitle" element={<JobPage />}>
+            <Route path="first-job" element={<FirstJob />} />
             <Route path="about-job" element={<About />} />
-            <Route path="now-job" element={<Nowjob />} />
+            <Route path="now-job" element={<NowJob />} />
           </Route>
-          <Route path="designer">
-            <Route path="first-job" element={<Fistjob />} />
+          {/* <Route path="designer">
+            <Route path="first-job" element={<FirstJob />} />
             <Route path="about-job" element={<About />} />
-            <Route path="now-job" element={<Nowjob />} />
-          </Route>
+            <Route path="now-job" element={<NowJob />} />
+          </Route> */}
         </Routes>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 }

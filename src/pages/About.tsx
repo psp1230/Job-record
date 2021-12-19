@@ -2,7 +2,7 @@
 // import logo from '@/logo.svg'
 // import '@/App.css'
 
-function App(): JSX.Element {
+function About(): JSX.Element {
   // const [count, setCount] = useState(0)
 
   return (
@@ -43,5 +43,4 @@ function App(): JSX.Element {
   )
 }
 
-export default App
-
+export default About;
