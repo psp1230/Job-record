@@ -1,5 +1,6 @@
 import ReactECharts from 'echarts-for-react';
-import { PieSeriesOption } from 'echarts';
+import { PieSeriesOption, } from 'echarts';
+
 const series: PieSeriesOption[] = [{
   type: 'pie',
   radius: '70%',
@@ -21,9 +22,27 @@ const series: PieSeriesOption[] = [{
     }
   },
   label: {
-    position: 'inner',
+    position: 'inner'
   }
 }];
+
+type GenderData = {
+  value: number,
+  name: string,
+  itemStyle: {
+    color: string,
+  },
+};
+[
+  { value: 1048, name: '男生', itemStyle: { color: '#448AFF' } },
+  { value: 735, name: '女生', itemStyle: { color: '#FF5252' } },
+]
+
+type Props = {
+  seriesData: GenderData,
+};
+
+
 
 function GenderRate(): JSX.Element {
   const option = {
