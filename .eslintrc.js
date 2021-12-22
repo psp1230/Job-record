@@ -3,9 +3,9 @@ module.exports = {
     'airbnb-typescript',
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
-    'plugin:jest/recommended'
+    'plugin:import/recommended'
   ],
-  plugins: ['react', '@typescript-eslint', 'jest', 'import'],
+  plugins: ['react', '@typescript-eslint'],
   env: {
     browser: true,
     es6: true,
@@ -27,8 +27,7 @@ module.exports = {
   rules: {
     'linebreak-style': 'off'
   },
-
-  'settings': {
+  settings: {
     'import/resolver': {
       'eslint-import-resolver-custom-alias': {
         'alias': {

@@ -4,7 +4,7 @@ module.exports = {
   bracketSpacing: true,
   trailingComma: "none",
   printWidth: 100,
-  semi: false,
+  semi: true,
   overrides: [
     {
       files: ".prettierrc",
