@@ -8,6 +8,9 @@
   },
   "dependencies": {
     "@loadable/component": "^5.15.2",
+    "@reduxjs/toolkit": "^1.7.1",
+    "@types/react-redux": "^7.1.20",
+    "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "echarts": "^5.2.2",
     "echarts-for-react": "^3.0.2",
@@ -16,6 +19,7 @@
     "ramda": "^0.27.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
     "react-router": "^6.1.1",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^6.1.1"
@@ -23,6 +27,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
+    "@types/axios": "^0.14.0",
     "@types/echarts": "^4.9.12",
     "@types/node": "^16.11.13",
     "@types/ramda": "^0.27.60",
