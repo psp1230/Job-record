@@ -1,16 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const uiData = createSlice({
-  name: "uiData",
+  name: 'uiData',
   initialState: {
-    value: [],
+    value: []
   },
   reducers: {
     fetchData: (state, action) => {
-      state.value = action.payload
+      state.value = action.payload;
     }
-  },
+  }
 });
 
-export const { fetchData } = uiData.actions
+export const { fetchData } = uiData.actions;
 export default uiData.reducer;

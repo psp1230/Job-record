@@ -11,7 +11,7 @@ function Home(): JSX.Element {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Home;
