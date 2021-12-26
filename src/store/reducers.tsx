@@ -4,5 +4,5 @@ import uiDataReducer from './uiDataSlice';
 
 export default combineReducers({
   frontendData: frontendDataReducer,
-  uiData: uiDataReducer
+  uiData: uiDataReducer,
 });

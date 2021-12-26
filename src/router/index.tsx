@@ -15,7 +15,7 @@ export default function route(): JSX.Element {
           <Route path="about-job" element={<About />} />
           <Route path="now-job" element={<NowJob />} />
         </Route>
-        <Route path="*" element={<Navigate to="/engineer" />} />
+        <Route path="*" element={<Navigate to="/engineer/first-job" />} />
       </Routes>
     </BrowserRouter>
   );

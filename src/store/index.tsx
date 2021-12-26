@@ -5,7 +5,7 @@ import rootReducer from './reducers';
 
 const store = configureStore({
   //初始化store並綁定reducer
-  reducer: rootReducer
+  reducer: rootReducer,
 });
 
 export default store;

@@ -1,13 +1,15 @@
-import GenderRate from '@/components/charts/GenderRate';
+type Props = {
+  children?: JSX.Element,
+};
 
-function Home(): JSX.Element {
+function Home({ children }: Props): JSX.Element {
   // const [count, setCount] = useState(0)
 
   return (
     <div className="flex-grow">
       <div className="flex justify-between">
         <div className="border border-gray-400">
-          <GenderRate />
+          {children}
         </div>
       </div>
     </div>

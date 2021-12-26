@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit';
 const uiData = createSlice({
   name: 'uiData',
   initialState: {
-    value: []
+    value: [],
   },
   reducers: {
     fetchData: (state, action) => {
       state.value = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const { fetchData } = uiData.actions;

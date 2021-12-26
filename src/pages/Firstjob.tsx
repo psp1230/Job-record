@@ -4,7 +4,7 @@ import * as R from 'ramda';
 
 function FirstJob(): JSX.Element {
   const frontendData = useSelector<ReduxStoreData>(
-    (state) => state.frontendData.value
+    (state) => state.frontendData.value,
   ) as FrontendData[];
   const skillList: string[][] = frontendData.map((item) => {
     const splitArr = R.split(/(?!([^(（]*[)）])),/, item.first_job.skill);
@@ -17,14 +17,16 @@ function FirstJob(): JSX.Element {
   const skillData = R.keys(countData).map((key) => {
     return {
       name: key.toString(),
-      value: countData[key]
+      value: countData[key],
     };
   });
+  const sortData = R.sort((a, b) => b.value - a.value, skillData);
+  const max30Data = R.slice(0, 20, sortData);
 
   return (
-    <div className="flex-grow">
-      <div className="flex justify-between w-full h-full">
-        <ImportSkill data={skillData} />
+    <div className="flex-grow h-full">
+      <div className="flex justify-between h-108 border border-gray-400 rounded-2xl">
+        <ImportSkill data={max30Data} />
       </div>
     </div>
   );
