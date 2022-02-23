@@ -2,7 +2,7 @@ import JobPage from '@/pages/Jobs';
 import Home from '@/pages/Home';
 import FirstJob from '@/pages/FirstJob';
 import About from '@/pages/About';
-import NowJob from '@/pages/NowJob'
+import NowJob from '@/pages/NowJob';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 export default function route(): JSX.Element {
@@ -15,10 +15,7 @@ export default function route(): JSX.Element {
           <Route path="about-job" element={<About />} />
           <Route path="now-job" element={<NowJob />} />
         </Route>
-        <Route
-          path="*"
-          element={<Navigate to="/engineer" />}
-        />
+        <Route path="*" element={<Navigate to="/engineer/first-job" />} />
       </Routes>
     </BrowserRouter>
   );

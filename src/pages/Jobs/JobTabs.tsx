@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as R from 'ramda';
 
 type Props = {
@@ -27,7 +27,7 @@ function JobTabs({ jobTitle }: Props): JSX.Element {
         設計師
       </Link>
     </div>
-  )
+  );
 }
 
 export default JobTabs;

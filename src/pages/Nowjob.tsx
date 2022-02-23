@@ -40,7 +40,7 @@ function NowJob(): JSX.Element {
         </p>
       </header> */}
     </div>
-  )
+  );
 }
 
 export default NowJob;
